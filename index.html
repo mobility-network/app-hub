@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script lang="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <script src="./src/js/bootstrap.js"></script>
+    <script src="./src/js/jquery.js"></script>
+    <link rel="stylesheet" href="./src/scss/main.css">
+    <link rel="stylesheet" href="./src/scss/style.css">
+    <title>Visuomotor Development App</title>
+</head>
+<body>
+    <div id="container-app">
+        <div id="pnl-head">
+            <nav class="navbar bg-body-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand text-white" href="#">
+                    <img src="./media/dvnl_logo_color.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center">
+                    Developmental Visuomotor Neuroscience Lab: Fitt's Task
+                  </a>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-secondary text-black" data-bs-toggle="modal" data-bs-target="#modal-instructions">
+                        Instructions
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <div id="pnl-main">
+            <div id="pnl-app" class="bg-white">
+                <div id="region-invalid"></div>
+                <div id="region-valid"></div>
+                <button id="tar-one" class="target dotted"></button>
+                <button id="tar-two" class="target dotted"></button>
+                <button id="btn-start" class="btn btn-success btn-lg">Start</button>
+                <div id="lbl-time-init" class="hide">0</div>
+                <div id="lbl-time">Time: </div>
+                <div id="lbl-score">Score: </div>
+                <p id="txt-score"></p>
+            </div>
+            <div class="card bg-dark text-white mb-3" style="max-width: 18rem;">
+                <div class="card-header">Settings</div>
+                <div class="card-body">
+                  <h5 class="card-title">Target</h5>
+                    <label for="range-distance" class="form-label" id="lbl-range-distance"></label>
+                    <input type="range" class="form-range" min="0" max="5" step="1" id="range-distance">
+                    <label for="range-size" class="form-label" id="lbl-range-size"></label>
+                    <input type="range" class="form-range" min="0" max="5" step="1" id="range-size">
+                  <h5 class="card-title">Calibration</h5>
+                    <hr class="bg-secondary" style="opacity: 1; height: 5px; width: 100px"/>
+                    <label for="input-cal" class="form-label">Calibration line length (cm):</label>
+                    <input type="number" class="form-control text-white" value="100" id="input-cal">
+                    <hr/>
+                    <p id="lbl-dist-cm"></p>
+                    <p id="lbl-size-cm"></p>
+                    <p id="lbl-index"></p>
+                  <h5 class="card-title">Time</h5>
+                    <label for="input-time" class="form-label">Trial time (seconds):</label>
+                    <input type="number" class="form-control text-white" value="10" id="input-time">
+                </div>
+                <button class="btn btn-secondary" id="btn-save">Save Data</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="modal-instructions" tabindex="-1" aria-labelledby="lbl-modal-instructions" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-white">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="lbl-modal-instructions">Instructions</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Welcome to the Fitt's task!<br><br>
+                    Follow the steps below to use the interface:<br>
+                    <ol>
+                        <li>Use the settings panel on the right to:
+                            <ul>
+                                <li>use the sliders to adjust the target distance and size</li>
+                                <li>measure the yellow calibration line with a ruler and enter the length measurement in centimeters</li>
+                                <li>enter the trial duration</li>
+                            </ul>
+                        </li>
+                        <li>
+                            To record a trial:
+                            <ul>
+                                <li>click the "START" button</li>
+                                <li>place cursor on central black dot and wait for the "GO!" message</li>
+                                <li>
+                                    move to the green target dots as fast as possible
+                                    <ul><li>each successful hit is +1 to the score</li></ul>
+                                </li>
+                                <li>
+                                    avoid the zones beyond each target (past the red lines)
+                                    <ul><li>each invalid zone entry is -5 to the score</li></ul>
+                                </li>
+                                <li>upon trial time completion, view the final score</li>
+                            </ul>
+                        </li>
+                        <li>To save all trial data, click the "Save Data" button in the bottom right</li>
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="./src/js/main.js"></script>
+<script src="./src/js/fullscreen.js"></script>
+<script src="./src/js/target_settings.js"></script>
+<script src="./src/js/target_cal.js"></script>
+<script src="./src/js/trial_time.js"></script>
+<script src="./src/js/target_hit.js"></script>
+</html>
