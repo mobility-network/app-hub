@@ -7,111 +7,78 @@
     <script src="./src/js/jquery.js"></script>
     <link rel="stylesheet" href="./src/scss/main.css">
     <link rel="stylesheet" href="./src/scss/style.css">
-    <title>Visuomotor Development App</title>
+    <title>Mobility Network</title>
 </head>
 <body>
-    <div id="container-app">
-        <div id="pnl-head">
-            <nav class="navbar bg-body-dark">
-                <div class="container-fluid">
-                  <a class="navbar-brand text-white" href="#">
-                    <img src="./media/dvnl_logo_color.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center">
-                    Developmental Visuomotor Neuroscience Lab: Fitt's Task
-                  </a>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-secondary text-black" data-bs-toggle="modal" data-bs-target="#modal-instructions">
-                        Instructions
-                    </button>
-                </div>
-            </nav>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">Mobility Network: Hub</span>
         </div>
-        <div id="pnl-main">
-            <div id="pnl-app" class="bg-white">
-                <div id="region-invalid"></div>
-                <div id="region-valid"></div>
-                <button id="tar-one" class="target dotted"></button>
-                <button id="tar-two" class="target dotted"></button>
-                <button id="btn-start" class="btn btn-success btn-lg">Start</button>
-                <div id="lbl-time-init" class="hide">0</div>
-                <div id="lbl-time">Time: </div>
-                <div id="lbl-score">Score: </div>
-                <p id="txt-score"></p>
-            </div>
-            <div class="card bg-dark text-white mb-3" style="max-width: 18rem;">
-                <div class="card-header">Settings</div>
+    </nav>
+    <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active bg-white">
+            <div class="card w-50 mx-auto my-2 p-3">
+              <img src="./media/accelerometer.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Target</h5>
-                    <label for="range-distance" class="form-label" id="lbl-range-distance"></label>
-                    <input type="range" class="form-range" min="0" max="5" step="1" id="range-distance">
-                    <label for="range-size" class="form-label" id="lbl-range-size"></label>
-                    <input type="range" class="form-range" min="0" max="5" step="1" id="range-size">
-                  <h5 class="card-title">Calibration</h5>
-                    <hr class="bg-secondary" style="opacity: 1; height: 5px; width: 100px"/>
-                    <label for="input-cal" class="form-label">Calibration line length (cm):</label>
-                    <input type="number" class="form-control text-white" value="100" id="input-cal">
-                    <hr/>
-                    <p id="lbl-dist-cm"></p>
-                    <p id="lbl-size-cm"></p>
-                    <p id="lbl-index"></p>
-                  <h5 class="card-title">Time</h5>
-                    <label for="input-time" class="form-label">Trial time (seconds):</label>
-                    <input type="number" class="form-control text-white" value="10" id="input-time">
-                </div>
-                <button class="btn btn-secondary" id="btn-save">Save Data</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modals -->
-    <div class="modal fade" id="modal-instructions" tabindex="-1" aria-labelledby="lbl-modal-instructions" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content bg-white">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="lbl-modal-instructions">Instructions</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Welcome to the Fitt's task!<br><br>
-                    Follow the steps below to use the interface:<br>
-                    <ol>
-                        <li>Use the settings panel on the right to:
-                            <ul>
-                                <li>use the sliders to adjust the target distance and size</li>
-                                <li>measure the yellow calibration line with a ruler and enter the length measurement in centimeters</li>
-                                <li>enter the trial duration</li>
-                            </ul>
-                        </li>
-                        <li>
-                            To record a trial:
-                            <ul>
-                                <li>click the "START" button</li>
-                                <li>place cursor on central black dot and wait for the "GO!" message</li>
-                                <li>
-                                    move to the green target dots as fast as possible
-                                    <ul><li>each successful hit is +1 to the score</li></ul>
-                                </li>
-                                <li>
-                                    avoid the zones beyond each target (past the red lines)
-                                    <ul><li>each invalid zone entry is -5 to the score</li></ul>
-                                </li>
-                                <li>upon trial time completion, view the final score</li>
-                            </ul>
-                        </li>
-                        <li>To save all trial data, click the "Save Data" button in the bottom right</li>
-                    </ol>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                  <h5 class="card-title">Welcome to the Mobility Network Hub!</h5>
+                  <p class="card-text">Overall project description here.</p>
+                  <h5 class="card-text">Scroll to view our tools</h5>
                 </div>
             </div>
+          </div>
+          <div class="carousel-item bg-white">
+            <div class="card w-50 mx-auto my-2 p-3">
+              <img src="./media/accelerometer.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Accelerometry</h5>
+                  <p class="card-text">Brief description here.</p>
+                  <a href="#" class="btn btn-primary">View Demo</a>
+                  <a href="#" class="btn btn-success">Launch App</a>
+                  <a href="#" class="btn btn-warning">Provide Feedback</a>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item bg-white">
+            <div class="card w-50 mx-auto my-2 p-3">
+              <img src="./media/annotation-web.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Video Annotation</h5>
+                  <p class="card-text">Brief description here.</p>
+                  <a href="#" class="btn btn-primary">View Demo</a>
+                  <a href="https://abdulzaf.github.io/mobilitynetwork-video/" class="btn btn-success">Launch App</a>
+                  <a href="#" class="btn btn-warning">Provide Feedback</a>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item bg-white">
+            <div class="card w-50 mx-auto my-2 p-3">
+                <img src="./media/limb-track-capture.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Limb Tracking</h5>
+                  <p class="card-text">Brief description here.</p>
+                  <a href="#" class="btn btn-primary">View Demo</a>
+                  <a href="https://abdulzaf.github.io/mobilitynetwork-square-tap/" class="btn btn-success">Launch App</a>
+                  <a href="#" class="btn btn-warning">Provide Feedback</a>
+                </div>
+            </div>
+          </div>
         </div>
-    </div>
-
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 </body>
 <script src="./src/js/main.js"></script>
-<script src="./src/js/fullscreen.js"></script>
-<script src="./src/js/target_settings.js"></script>
-<script src="./src/js/target_cal.js"></script>
-<script src="./src/js/trial_time.js"></script>
-<script src="./src/js/target_hit.js"></script>
 </html>
